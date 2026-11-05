@@ -1,19 +1,19 @@
 Ising_tools
 ===========
 
-In questo documento descriviamo le funzioni utilizzate nella simulazione del reticolo ad nido d'ape.
+Description of the functions implemented in the module `Ising_tools.py` for simulating the 2D Ising model on a honeycomb lattice.
 
 .. py:function:: metropolis(spin_matrix, T)
 
-   Esegue un passo dell'algoritmo di Metropolis sul reticolo ad nido d'ape per aggiornare la configurazione degli spin.
+   Executes a single step of the Metropolis algorithm for the 2D Ising model on a honeycomb lattice.
 
-   :param spin_matrix: Matrice bidimensionale rappresentante la griglia di spin (+1 o -1).
+   :param spin_matrix: bidimensional matrix representing the spin grid (+1 or -1).
    :type spin_matrix: numpy.ndarray
-   :param T: Temperatura del sistema in unità adimensionali.
+   :param T: Temperature of the system in dimensionless units.
    :type T: float
-   :returns: La nuova configurazione della matrice degli spin dopo i tentativi di flip.
+   :returns: The new configuration of the spin matrix after the flip attempt.
    :rtype: numpy.ndarray
-   :raises ValueError: Se la matrice degli spin contiene valori diversi da +1 e -1.
+   :raises ValueError: If the spin matrix contains values different from +1 and -1.
 
    **Esempio di utilizzo:**
 

@@ -5,7 +5,7 @@ Calculation of the critical properties of a 2D Ising Model on a honeycomb lattic
 
 .. toctree::
    :maxdepth: 2
-   :caption: Indice Contenuti:
-
+   :caption: Index of contents:
+   
    Ising_tools
    Ising_model_2D_honeycomb
