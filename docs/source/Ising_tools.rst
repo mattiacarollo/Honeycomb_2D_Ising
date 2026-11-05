@@ -1,14 +1,14 @@
 Ising_tools
-=============================
+===========
 
 In questo documento descriviamo la funzione principale utilizzata nella simulazione.
 
-..autofunction:: Ising_tools.metropolis
+.. autofunction:: Ising_tools.metropolis
 
 La funzione calcola l'evoluzione dello stato di spin sul reticolo ad nido d'ape.
 
-* **Parametri di ingresso:** Matrice di spin, temperatura $T$.
-* **Output:** Configurazione finale degli spin.
+- **Parametri di ingresso:** Matrice di spin, temperatura :math:`T`.
+- **Output:** Configurazione finale degli spin.
 
 Esempio di Utilizzo
 ~~~~~~~~~~~~~~~~~~~
