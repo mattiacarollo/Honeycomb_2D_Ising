@@ -12,7 +12,7 @@ class TestIsingTools(unittest.TestCase):
         self.T = 2.26
         SEED = 68
         rng = np.random.default_rng(seed=SEED)
-        self.spin_matrix = rng.choice([-2, 1], size=(self.L, self.L))
+        self.spin_matrix = rng.choice([-1, 1], size=(self.L, self.L))
 
     def test_values_shape_spin_matrix_after_metropolis(self):
         """Verifica che dopo i passi di Metropolis la matrice mantenga sia la forma sia i valori +/-1."""
