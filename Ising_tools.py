@@ -7,6 +7,7 @@ def metropolis(spin_matrix, T):
     rand_j = np.random.randint(0, spin_matrix.shape[1])
     rand_spin = spin_matrix[rand_i, rand_j]     # randomly chosen spin
 
+    L = spin_matrix.shape[0]     # size of the (square) spin matrix
     if rand_j % 2 == 0:     # for rand_j even, the neighbours are (i-1,j) , (i,j+-1)
         neighbors = [spin_matrix[(rand_i - 1) % L, rand_j],
                      spin_matrix[rand_i, (rand_j - 1) % L],
