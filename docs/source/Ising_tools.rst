@@ -28,6 +28,10 @@ Description of the functions implemented in the module `Ising_tools.py` for simu
       # Esecuzione dello step a temperatura T=2.26
       nuovo_stato = metropolis(spin_grid, T=2.26)
 
+
+----
+
+
 .. py:function:: magnetization(spin_matrix)
 
    Computes the magnetization per site of a given spin configuration.
@@ -49,6 +53,10 @@ Description of the functions implemented in the module `Ising_tools.py` for simu
       
       # Calcolo della magnetizzazione per sito
       m = magnetization(spin_grid)
+
+
+----
+
 
 .. py:function:: magnetic_susceptibility(spin_matrix)
 
@@ -72,6 +80,10 @@ Description of the functions implemented in the module `Ising_tools.py` for simu
       # Calcolo della suscettività magnetica per sito
       chi = magnetic_susceptibility(spin_grid)
 
+
+----
+
+
 .. py:function:: mod_magnetic_susceptibility(spin_matrix)
 
    Computes the modified magnetic susceptibility per site of a given spin configuration, using the absolute value of the magnetization instead of the magnetization.
@@ -93,6 +105,10 @@ Description of the functions implemented in the module `Ising_tools.py` for simu
       
       # Calcolo della suscettività magnetica modificata per sito
       chi_mod = mod_magnetic_susceptibility(spin_grid)
+
+
+----
+
 
 .. py:function:: energy(spin_matrix, J)
 

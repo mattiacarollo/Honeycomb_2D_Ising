@@ -9,8 +9,7 @@
 import os
 import sys
 
-sys.path.insert(0, os.path.abspath('.'))
-sys.path.insert(0, os.path.abspath('../../'))
+
 sys.path.insert(0, os.path.abspath('../..'))
 
 project = 'Honeycomb_2D_Ising'
@@ -37,3 +36,5 @@ exclude_patterns = []
 
 html_theme = 'alabaster'
 html_static_path = ['_static']
+
+nbsphinx_allow_errors = True
