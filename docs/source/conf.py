@@ -11,6 +11,7 @@ import sys
 
 sys.path.insert(0, os.path.abspath('.'))
 sys.path.insert(0, os.path.abspath('../../'))
+sys.path.insert(0, os.path.abspath('../..'))
 
 project = 'Honeycomb_2D_Ising'
 copyright = '2026, Mattia Carollo'
