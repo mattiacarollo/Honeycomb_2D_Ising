@@ -30,7 +30,7 @@ def metropolis(spin_matrix, T):
     return spin_matrix
 
 @njit
-def metropolis_numba(spin_matrix, T, n_steps):
+def metropolis_parallel(spin_matrix, T, n_steps):
     L = spin_matrix.shape[0]
     
     for _ in range(n_steps):
