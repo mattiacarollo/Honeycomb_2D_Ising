@@ -9,8 +9,8 @@
 import os
 import sys
 
-sys.path.insert(0, os.path.abspath('.'))
-sys.path.insert(0, os.path.abspath('../../'))
+
+sys.path.insert(0, os.path.abspath('../..'))
 
 project = 'Honeycomb_2D_Ising'
 copyright = '2026, Mattia Carollo'
@@ -21,7 +21,6 @@ release = '1.0'
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
 extensions = [
-    'sphinx.ext.autodoc',
     'sphinx.ext.napoleon',
     'nbsphinx',
     'nbsphinx_link',
@@ -37,3 +36,5 @@ exclude_patterns = []
 
 html_theme = 'alabaster'
 html_static_path = ['_static']
+
+nbsphinx_allow_errors = True
