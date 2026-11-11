@@ -38,7 +38,7 @@ def metropolis_parallel(spin_matrix, T, n_steps):
         rand_j = np.random.randint(0, L)
         rand_spin = spin_matrix[rand_i, rand_j]
 
-        # Vicini con condizioni al contorno periodiche su griglia quadrata
+        # Vicini con condizioni al contorno periodiche su griglia esagonale
         if rand_j % 2 == 0:     # for rand_j even, the neighbours are (i-1,j) , (i,j+-1)
                 neighbours_sum = (spin_matrix[(rand_i - 1) % L, rand_j] +
                              spin_matrix[rand_i, (rand_j - 1) % L] +

@@ -2,7 +2,6 @@ import unittest
 import numpy as np
 import Ising_tools
 
-
 class TestIsingTools(unittest.TestCase):
 
     def setUp(self):
