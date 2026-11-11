@@ -9,7 +9,7 @@ import time
 # --- PARAMETRI ---
 L = np.array([10], dtype=int)    # lattice sizes
 beta = np.arange(0.6,0.7,0.005)
-n_simulation = 10000
+n_simulation = 1000
 metropolis_steps = np.zeros(len(L), dtype=int)
 for i in range(len(L)):
     metropolis_steps[i] = 100 * (L[i] ** 2)
