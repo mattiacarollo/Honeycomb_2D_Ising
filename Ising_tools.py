@@ -1,7 +1,7 @@
 import numpy as np
 from numba import njit
 
-# METROPOLIS ALGORITHM
+# --------------------------- METROPOLIS ALGORITHM ------------------
 
 def metropolis(spin_matrix, T):
     L = spin_matrix.shape[0]     # size of the (square) spin matrix
@@ -53,7 +53,7 @@ def metropolis_parallel(spin_matrix, T, n_steps):
         if dE <= 0 or np.random.rand() < np.exp(-dE / T):
             spin_matrix[rand_i, rand_j] *= -1
 
-# THERMODINAMIC QUANTITIES
+# -------------------------- THERMODINAMIC QUANTITIES ------------------
 
 # Magnetization per site
 def magnetization(spin_matrix):
