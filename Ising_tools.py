@@ -53,8 +53,6 @@ def metropolis_parallel(spin_matrix, T, n_steps):
         if dE <= 0 or np.random.rand() < np.exp(-dE / T):
             spin_matrix[rand_i, rand_j] *= -1
 
-    return spin_matrix
-
 # THERMODINAMIC QUANTITIES
 
 # Magnetization per site

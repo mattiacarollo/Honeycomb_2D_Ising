@@ -11,16 +11,16 @@ class TestIsingTools(unittest.TestCase):
         self.T = 2.26
         SEED = 68
         rng = np.random.default_rng(seed=SEED)
-        self.spin_matrix = rng.choice([-1, 1], size=(self.L, self.L))
+        self.dummy_spin_matrix = rng.choice([-1, 1], size=(self.L, self.L))
 
-    def test_values_shape_spin_matrix_after_metropolis(self):
+    # ---------------- TEST METROPOLIS ---------------------
+
+    def test_values_and_shape_dummy_spin_matrix_after_metropolis(self):
         """Verifica che dopo i passi di Metropolis la matrice mantenga sia la forma sia i valori +/-1."""
 
-        grid_copy = self.spin_matrix.copy()     # Copia della matrice per evitare modifiche all'originale
+        grid_copy = self.dummy_spin_matrix.copy()     # Copia della matrice per evitare modifiche all'originale
         
-        n_steps = self.L * self.L       # in media un tentativo per spin
-        for _ in range(n_steps):
-            grid_copy = Ising_tools.metropolis(grid_copy, T=2.26)
+        grid_copy = Ising_tools.metropolis(grid_copy, T=2.26)
 
         # Check dimensions
         self.assertEqual(
@@ -34,3 +34,37 @@ class TestIsingTools(unittest.TestCase):
             unique_vals.issubset({-1, 1}),
             f"Valori non validi riscontrati dopo Metropolis: {unique_vals - {-1, 1}}"
         )
+
+    def test_values_and_shape_dummy_spin_matrix_after_metropolis_parallel(self):
+            """Verifica che dopo i passi di Metropolis (con Numba) la matrice mantenga sia la forma sia i valori +/-1."""
+    
+            grid_copy = self.dummy_spin_matrix.copy()     # Copia della matrice per evitare modifiche all'originale
+            
+            Ising_tools.metropolis_parallel(grid_copy, T=2.26, n_steps=1)
+    
+            # Check dimensions
+            self.assertEqual(
+                grid_copy.shape, (self.L, self.L),
+                f"La dimensione è cambiata! Atteso {(self.L, self.L)}, ottenuto {grid_copy.shape}"
+            )
+    
+            # Check values
+            unique_vals = set(np.unique(grid_copy))
+            self.assertTrue(
+                unique_vals.issubset({-1, 1}),
+                f"Valori non validi riscontrati dopo Metropolis: {unique_vals - {-1, 1}}"
+            )
+
+    # ---------------- TEST THERMO QUANTITIES -------------------
+    
+    def test_magnetization_values(self):
+        """Verifica che la magnetizzazione sia compresa tra -1 e 1."""
+        
+        m = Ising_tools.magnetization(self.dummy_spin_matrix)
+        
+        self.assertTrue(
+            -1 <= m <= 1,
+            f"Magnetizzazione fuori dai limiti: {m}"
+        )
+
+    
