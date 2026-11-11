@@ -57,7 +57,7 @@ class TestIsingTools(unittest.TestCase):
 
     # ---------------- TEST THERMO QUANTITIES -------------------
     
-    def test_magnetization_values(self):
+    def test_magnetization_value(self):
         """Verifica che la magnetizzazione sia compresa tra -1 e 1."""
         
         m = Ising_tools.magnetization(self.dummy_spin_matrix)
